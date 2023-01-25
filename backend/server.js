@@ -6,8 +6,10 @@ const connectDatabase = require("./config/database")
 //To access the config.env file , we install dotenv
 dotenv.config({path:"backend/config/config.env"});
 
+console.log(process.env.DB_URI)
 //Connecting to database
 connectDatabase()
+
 
 //create a server
 app.listen(process.env.PORT, () => {

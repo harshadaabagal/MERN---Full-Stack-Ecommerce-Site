@@ -37,12 +37,12 @@ const productSchema = mongoose.Schema({
 
     category: {
         type:String,
-        required:[true,"Please Enter Product Category"],
+        //required:[true,"Please Enter Product Category"],
 
     }, 
     Stock:{
         type: Number,
-        required: [true,"Please Enter Product Stock"],
+        //required: [true,"Please Enter Product Stock"],
         maxLength: [4 , "Stock cannot exceed 4 characters"],
         default: 1
     },
@@ -54,15 +54,15 @@ const productSchema = mongoose.Schema({
         {
             name: {
                 type: String,
-                required: true,
+               // required: true,
             },
             rating: {
                 type: Number,
-                required: true,
+               // required: true,
             },
             comment: {
                 type:String,
-                required:true
+               // required:true
             }
         }
     ],
