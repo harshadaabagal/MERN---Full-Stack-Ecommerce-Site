@@ -1,0 +1,12 @@
+create two folders 
+backend
+frontned 
+
+create 2 files in backend
+-app.js
+-server.js
+
+terminal - npm init
+set entry point to server.js
+
+npm i express mongoose dotenv
