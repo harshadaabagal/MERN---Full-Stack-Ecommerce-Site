@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");  // import required modules
 const validator = require("validator");
 const bcrypt = require("bcryptjs");   // to encrypt password
+const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -45,7 +46,19 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre("save", async function(next) {  // before saving , you need to encrypt the password
-  this.password = bcrypt.hash(this.password, 10)  //hash technique for encryption
+
+  if (!this.isModified("password")) {
+    next();
+  }
+
+  this.password = await bcrypt.hash(this.password, 10)  //hash technique for encryption 
 })
+
+// JWT TOKEN
+userSchema.methods.getJWTToken = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRE,
+  });
+};
 
 module.exports = mongoose.model("User", userSchema);
