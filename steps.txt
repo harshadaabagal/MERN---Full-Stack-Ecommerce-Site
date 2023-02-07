@@ -25,3 +25,6 @@ Nodemailer – send email or otp
 Cookie-parser – generated jsonwebtoken should be stored in cookies as we cannot access it from frontend
 
 Body parser - Body-parser is a middleware package in Node.js that is used to parse incoming request bodies in a middleware before your handlers, available under the req.body property. It can handle different types of request bodies such as JSON, text, and URL-encoded. Body-parser makes it easier to extract data from request bodies, making it an essential component of many Node.js web applications.
+
+After encrypting the password using bcrypt , user cannot login with encryted password. 
+So we create jwt tokens and store them in cookies so it can be identified that this user can login
