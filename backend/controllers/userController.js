@@ -1,4 +1,4 @@
-const ErrorHander = require("../utils/errorhander");
+const ErrorHandler = require("../utils/errorhandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const User = require("../models/userModel");
 
@@ -11,8 +11,8 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
       email,
       password,
       avatar: {
-        public_id: myCloud.public_id,
-        url: myCloud.secure_url,
+        public_id: "this is a sample id",
+        url: "profilepicUrl",
       },
     });
 
