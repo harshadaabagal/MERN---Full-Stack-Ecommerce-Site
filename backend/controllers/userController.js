@@ -10,7 +10,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     const user = await User.create({
       name,
       email,
-      password,
+      password, 
       avatar: {
         public_id: "this is a sample id",
         url: "profilepicUrl",
