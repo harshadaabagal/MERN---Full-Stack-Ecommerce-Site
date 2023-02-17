@@ -28,5 +28,4 @@ Body parser - Body-parser is a middleware package in Node.js that is used to par
 
 After encrypting the password using bcrypt , user cannot login with encryted password. 
 So we create jwt tokens and store them in cookies so it can be identified that this user can login
-
-2.50
+4
