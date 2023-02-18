@@ -14,7 +14,7 @@ const product = {
 const Home = () => {
   return (
     <Fragment>
-        <Metadata title="Home page is working"/>
+        <Metadata title="ECOMMERCE"/>
       <div className="banner">
         <p>Welcome to ECOMMERCE</p>
         <h1>Find Amazing Products</h1>
