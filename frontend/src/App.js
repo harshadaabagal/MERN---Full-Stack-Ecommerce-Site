@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import Footer from "./component/layout/Footer/Footer.js"
 import Home from './component/Home/Home.js'
 import Product from './component/Home/Product';
+import Loader from './component/layout/Loader/Loader';
+import ProductDetails from "./component/Product/ProductDetails.js"
 
 
 
@@ -23,6 +25,8 @@ function App() {
       <Header/>
       <Routes>
       <Route exact path="/" component={Home} />
+      <Route exact path="/product/:id" component={ProductDetails} />
+
       </Routes>
      
       <Home/>
