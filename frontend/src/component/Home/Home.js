@@ -3,6 +3,10 @@ import "./Home.css";
 import { CgMouse } from "react-icons/cg";
 import Product from "./Product.js";
 import Metadata from "../layout/Header/Metadata";
+import { getProduct } from "../../actions/productAction";
+import { useSelector , useDispatch } from "react-redux";
+
+
 
 const product = {
   name: "Blue T shirt",
@@ -12,6 +16,11 @@ const product = {
 };
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const {loading,error,products,productsCount} = useSelector(state=>state.products)
+  useEffect(() => {
+    dispatch(getProduct());
+  }, [dispatch]);
   return (
     <Fragment>
         <Metadata title="ECOMMERCE"/>
@@ -27,14 +36,11 @@ const Home = () => {
       </div>
       <h2 className="homeHeading">Featured Products</h2>
       <div className="container" id="container">
+      {products && products.map(product => (
         <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
+      ))}
+              
+            
       </div>
     </Fragment>
   );

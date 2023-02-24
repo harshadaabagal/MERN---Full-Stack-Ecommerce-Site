@@ -31,3 +31,9 @@ So we create jwt tokens and store them in cookies so it can be identified that t
 4
 
 axios - to fetch data from backend
+
+Helemt - to give every page a unique title
+
+Redux - is used for state management
+Without using redux , you need to pass the data from one component to other 
+But using redux , u create a store and fetch all the data from db and give it to other components - store.js created

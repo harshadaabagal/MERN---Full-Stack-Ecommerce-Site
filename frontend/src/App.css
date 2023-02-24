@@ -15,9 +15,9 @@
   }
   
   /* Firefox */
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
+  /* input[type="number"] {
+    /* -moz-appearance: textfield; */
+   */
   
   .greenColor {
     color: green !important;
